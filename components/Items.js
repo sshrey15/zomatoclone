@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View,Pressable,Image } from 'react-native'
+import { StyleSheet, Text, View,Pressable,Image, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const Items = () => {
   return (
-    <View>
+    <SafeAreaView>
        <Text
               style={{
                 margin: 10,
@@ -120,7 +120,7 @@ const Items = () => {
                 </View>
               </View>
             </Pressable>
-    </View>
+    </SafeAreaView>
   )
 }
 
