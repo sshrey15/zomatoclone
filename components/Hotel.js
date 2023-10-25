@@ -1,11 +1,28 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import Ratting from "./Ratting";
 
 const Hotel = (props) => {
   const restaurant = props.restaurant;
+  const navigation = useNavigation ();
 
   return (
-    <View
+
+    <Pressable 
+    /* Javascript Object */
+    onPress={() => {
+      navigation.navigate("HotelRoom", { 
+        id: restaurant.id,
+        name: restaurant.name,
+        adress: restaurant.adress,
+        smalladress: restaurant.smalladress,
+        cuisines: restaurant.cuisines,
+        rate: restaurant.aggregate_rating,
+        
+       }); // Pass the id as a parameter
+    }}
+    
       style={{
         margin: 10,
         borderRadius: 10,
@@ -61,35 +78,9 @@ const Hotel = (props) => {
         </View>
 
         {/* Ratting */}
-        <View style={{
-          flexDirection: "row",
-          alignItems: "right",
-          paddingHorizontal: 11,
-          
-        
-        }}>
-        <Text 
-        style={{
-          fontSize: 20,
-          fontWeight: "bold",
-          fontWeight: "normal",
-          color: "white",
-          flexDirection: "column",
-          margin: 10,
-          textAlign: "right",
-          backgroundColor:"green",
-          height:25,
-          width:30,
-          textAlign:"center",
-          borderRadius:5,
-
-        }}
-          
-        >
-          {restaurant.aggregate_rating} 
-        </Text></View>
+        <Ratting props={restaurant.aggregate_rating}/>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

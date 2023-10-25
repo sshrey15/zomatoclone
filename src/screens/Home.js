@@ -18,7 +18,7 @@ import Hotel from "../../components/Hotel";
 const Home = () => {
   const data = Hotels;
   return (
-    <ScrollView style={{ marginTop: 30 }}>
+    <ScrollView >
       <View
         style={{
           flexDirection: "row",
