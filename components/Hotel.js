@@ -19,6 +19,9 @@ const Hotel = (props) => {
         smalladress: restaurant.smalladress,
         cuisines: restaurant.cuisines,
         rate: restaurant.aggregate_rating,
+        offering: restaurant.offer,
+        timing: restaurant.time,
+        
         
        }); // Pass the id as a parameter
     }}
